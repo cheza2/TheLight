@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     // MARK: - Properties
-    var isLightOn = true
+    var isLightOn = 1
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -22,12 +22,22 @@ class ViewController: UIViewController {
     }
 
     fileprivate func updateUi() {
-        view.backgroundColor = isLightOn ? .white : .black
+    switch isLightOn {
+    case 1: view.backgroundColor = .red
+    case 2: view.backgroundColor = .yellow
+    case 3: view.backgroundColor = .green
+    default: print("error") }
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        isLightOn.toggle()
-        updateUi()
+    if isLightOn == 3 {
+    isLightOn = 1
     }
-}
+    else {
+    isLightOn = isLightOn + 1
+    }
+
+    updateUi()
+    }
+    }
 
