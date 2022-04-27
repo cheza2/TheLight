@@ -39,6 +39,7 @@ class ViewController: UIViewController {
     isLightOn = isLightOn + 1
     }
     updateUi()
+    //flashlight initialization function
     func toggleTorch(on:Bool) {
     guard
     let device = AVCaptureDevice.default(for: AVMediaType.video),device.hasTorch
@@ -50,6 +51,7 @@ class ViewController: UIViewController {
     }
     }
     }
+    //flashlight control function
     @IBAction func flash(_ sender: Any) {
     let device = AVCaptureDevice.default(for: AVMediaType.video)
     if ((device?.hasTorch) != nil) {
