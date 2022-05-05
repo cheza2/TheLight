@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     case 1: view.backgroundColor = .purple
     case 2: view.backgroundColor = .red
     case 3: view.backgroundColor = .yellow
-    default: print("error") }
+    default: break }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
